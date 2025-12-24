@@ -1,0 +1,15 @@
+services:
+  database:
+    image: postgres:latest
+    container_name: recipes
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: recipesdb
+    volumes:
+      - recipes-data:/var/lib/postgresql
+
+volumes:
+  recipes-data: {}
